@@ -1,0 +1,37 @@
+@font-face {
+  font-family: mylogo-font;
+  src: url('./Bamf.ttf')
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.navbar-brand.title-logo {
+  font-family: mylogo-font;
+  color: #c0c0c0;
+  cursor: pointer;
+}
+
+.navbar-brand.title-logo:hover {
+  color: #000;
+}
+
+.adjust-small-char {
+  font-size: .8em;
+  padding-right: 4em;
+}
+
+/* .sasha-nav-bar {
+  background: #007bff;
+  border-color: #007bff;
+  color: #c0c0c0;
+}
+
+.nav-link {
+  color: #c0c0c0 !important;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+} */

@@ -1,0 +1,37 @@
+.mat-card {
+  margin-bottom: 30px;
+}
+
+.mat-card-footer {
+  padding: 0;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+.card-footer {
+  padding: 0;
+}
+
+.card-footer button {
+  cursor: pointer;
+}
+
+.card-title, .card-text {
+  padding: 2px 1em 2px 1em;
+}
+
+.fa-cart-plus {
+  margin-right: 30px;
+
+}
+
+.cart-action {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.btn.btn-action {
+  padding: 0;
+}

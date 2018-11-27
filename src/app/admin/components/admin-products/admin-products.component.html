@@ -1,0 +1,72 @@
+
+<div class="row">
+  <div class="col-8">
+    <div class="table-header">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col=4 text-right">
+      <a routerLink="/admin/products/new" class="btn btn-primary">
+        <i class="fa fa-gift" aria-hidden="true"></i>
+        New Product
+      </a>
+      <a routerLink="/admin/products-other-view" class="btn btn-primary">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        Other View
+      </a>
+      <a routerLink="/admin/products-view" class="btn btn-primary">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        DT View
+      </a>
+  </div>
+</div>
+
+
+ <div class="table-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+
+      <!-- position column -->
+      <ng-container matColumnDef="no" >
+          <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+          <mat-cell *matCellDef="let product; let iindex=index;"
+            let odd = odd; let even = even;
+              > {{ iindex+1 }}. PK="{{product.$key}}"</mat-cell>
+      </ng-container>
+
+      <!-- title -->
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+        <mat-cell *matCellDef="let product"> {{ product.title }} </mat-cell>
+      </ng-container>
+      <!-- price -->
+      <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+          <mat-cell *matCellDef="let product"> {{ product.price | currency: 'USD':'symbol' }} </mat-cell>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit" >
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let product">
+            <a [routerLink]="['/admin/products/', product.$key]">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              Edit
+            </a>
+          </mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+      <mat-row *matRowDef="let row; columns: displayedColumns;"
+          [ngClass]="{'even': selectedRowIndex == (index+1) }"
+          (click)="highlight(row);"
+
+        ></mat-row>
+
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+ </div>

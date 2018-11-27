@@ -1,0 +1,21 @@
+
+.row-header {
+  background: #666;
+  color: #fff;
+  padding: .3em;
+  margin-bottom: .4em;
+}
+
+.odd {
+  background: #add8e6;
+  padding: .2em;
+}
+
+.even {
+  background: #f5f5f5;
+  padding: .2em;
+}
+
+.padding {
+  padding: .2em;
+}

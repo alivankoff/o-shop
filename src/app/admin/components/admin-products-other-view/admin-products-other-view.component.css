@@ -1,0 +1,47 @@
+/*
+ *  coloring and sizing ngx-datatable
+ */
+
+.ngx-datatable {
+  height: 500px;
+  width: 700px;
+}
+
+mat-card.mat-card {
+  background: #9efab5;
+  padding-left: 2em;
+  width: 300px;
+  border-radius: 8px;
+  margin-top: 80px;
+  height: 120px;
+}
+
+:host >>> .datatable-header .datatable-header-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #336699 !important;
+  color: #fff !important;
+}
+
+:host >>> .datatable-body-row.active .datatable-row-group {
+  background-color:#ff0 !important;
+  color: #eee;
+}
+
+:host >>> .datatable-body-row:hover .datatable-row-group {
+  background-color:#bbff00 !important;
+  color: #eee;
+}
+
+:host >>> .datatable-body-cell-label {
+  cursor: progress;
+  /* cursor: url('http://localhost:4200/admin/products-other-view/cursor-s.png'), select; */
+}
+
+.picture-place {
+  border: solid 3px #c0c0c0;
+  left: -102px;
+  top: 30px;
+  position: relative;
+}

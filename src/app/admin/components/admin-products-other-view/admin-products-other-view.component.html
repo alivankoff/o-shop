@@ -1,0 +1,67 @@
+<h5>Another View</h5>
+<div class="row">
+  <div class="col-9">
+      <div class="table-header">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <mat-form-field>
+            <input matInput (keyup)="filter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+        </div>
+        <div style="float:left;width:75%">
+        <ngx-datatable
+              class="material striped"
+              [rows]="products"
+              [sortType]="'force'"
+              [columnMode]="'standard'"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              [scrollbarV]="true"
+              [rowClass]="getRowClass"
+              [loadingIndicator]="loading"
+              [rowHeight]="50"
+              [limit]="7"
+              [selected]="selected"
+              [selectionType]="'single'"
+              (activate)="onActivate($event)"
+              (select)='onSelect($event)'>
+          <ngx-datatable-column name="Produt Title" [width]="300" prop="title">
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                {{row['title']}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Price" [sortable]="true">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  {{row['price'] | currency}}
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Edit Record" [width]="300" [sortable]="false">
+              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <a [routerLink]="['/admin/products/', row.$key]">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit
+                  </a>
+              </ng-template>
+          </ngx-datatable-column>
+      </ngx-datatable>
+      </div>
+  </div>
+  <div class="col-3">
+        <mat-card>
+            <h5>Selections</h5>
+            <ul>
+              <li *ngFor='let sel of selected'>
+                {{sel.title}} with price: {{ sel.price | currency:'USD':true}}<br/>
+                <div class="picture-place">
+                  <img class="card-img-top" [src]="sel.imageUrl" *ngIf="sel.imageUrl">
+                </div>
+
+              </li>
+              <li *ngIf="!selected.length">No Selections</li>
+            </ul>
+        </mat-card>
+  </div>
+</div>
+
+
+
+

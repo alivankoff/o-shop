@@ -1,0 +1,28 @@
+
+.btn.btn-primary {
+  width: 160px;
+}
+
+.fa-gift, .fa-eye {
+  padding-right: 20px;
+}
+
+.fa.fa-search {
+  color: #666;
+}
+
+.odd {
+  background: #ffffaa;
+}
+
+.even {
+  background: #ff00aa;
+}
+
+mat-row:nth-child(even){
+  background-color:rgb(216, 216, 216);
+  }
+
+ mat-row:nth-child(odd){
+  background-color:rgb(255, 255, 255);
+  }

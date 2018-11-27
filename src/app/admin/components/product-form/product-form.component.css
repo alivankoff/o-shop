@@ -1,0 +1,24 @@
+button.request {
+  width: 140px;
+}
+
+i.fa {
+  padding-right: 12px;
+}
+
+hr {
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+  color: rgb(147, 147, 147);
+}
+
+.category-memo {
+  font-size: .8em;
+  color: #800;
+  padding-right: 2em;
+}

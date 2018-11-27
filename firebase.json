@@ -1,0 +1,23 @@
+{
+  "firebase": "oshop-daniel",
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/login",
+        "destination": "/index.html",
+        "type": 302
+      },
+      {
+        "source": "/admin",
+        "destination": "/index.html",
+        "type": 302
+      }
+    ]
+  }
+}

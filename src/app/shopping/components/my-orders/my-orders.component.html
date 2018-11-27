@@ -1,0 +1,25 @@
+<h4>Orders</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>City</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders$ | async">
+      <td>{{ order.shipping.name }}</td>
+      <td>{{ order.shipping.city }}</td>
+      <td>{{ order.datePlaced | date}}</td>
+      <td>{{ order.items[0].totalPrice  | currency: 'USD':'simbol'}}</td>
+      <td>
+        <a href="#">View</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
